@@ -11,8 +11,8 @@
     <view class="logo"></view>
     <text class="counter-text">Counter: {{ counterStore.count }}</text>
     <view class="counter">
-      <button class="btn" type="primary" @click="increment">Increment</button>
-      <button class="btn" type="primary" @click="decrement">Decrement</button>
+      <button class="counter-btn" type="primary" @click="increment">Increment</button>
+      <button class="counter-btn" type="primary" @click="decrement">Decrement</button>
     </view>
   </view>
 </template>
@@ -109,11 +109,11 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
 
-  .btn{
-    margin-left: 12rpx;
-    margin-right: 12rpx;
-  }
+.counter-btn{
+  margin-left: 12rpx;
+  margin-right: 12rpx;
 }
 
 </style>
