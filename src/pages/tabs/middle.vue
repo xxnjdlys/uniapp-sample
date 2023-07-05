@@ -11,11 +11,15 @@
     <view class="content">
       <image src="@/static/img/ios_frame.png" mode="widthFix"></image>
       <image src="@/static/img/my_bg.jpeg" mode="widthFix" class="content-image"></image>
+      <text class="content-text">Counter:{{ counterStore.count }}</text>
     </view>
   </view>
 </template>
 
 <script>
+
+import { useCounterStore } from '@/stores/counter'
+const counterStore = useCounterStore();
 
 export default {
   name: "tab-middle",
@@ -27,7 +31,7 @@ export default {
   },
   data() {
     return {
-      title: 'Hello',
+      counterStore: counterStore,
     }
   },
   onLoad() { },
@@ -44,6 +48,16 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
+.content-text {
+  position: absolute;
+  top: 144rpx;
+  bottom: 64rpx;
+  z-index: 3;
+  color: white;
+  font-size: 48rpx;
+}
+
 .content-image {
   position: absolute;
   width: 510rpx;

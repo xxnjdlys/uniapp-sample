@@ -58,7 +58,7 @@ export default {
   components: {TabMiddle, TabMy, TabHome},
   data() {
     return {
-      currentPage: 2,
+      currentPage: 0,
     }
   },
   onLoad() {
