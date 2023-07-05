@@ -5,4 +5,12 @@ export default defineConfig({
   plugins: [
     uni(),
   ],
+  // resolve: {
+  //   alias: [
+  //     {
+  //       find: /^~(.*)$/,
+  //       replacement: 'node_modules/$1',
+  //     },
+  //   ],
+  // },
 })
