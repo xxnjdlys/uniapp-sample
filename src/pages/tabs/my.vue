@@ -9,7 +9,7 @@
 <template>
   <view>
     <!-- 顶部背景 -->
-    <view class="">
+    <view>
       <image class="my-cover" mode="widthFix" src="/static/img/my_bg.jpeg"></image>
       <view class='space' v-show="true">
         <view class="stars ">
@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      picName: '流星之夜',
+
     }
   },
   onLoad() {

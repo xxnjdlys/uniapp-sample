@@ -9,10 +9,19 @@
 <template>
   <view class="content">
     <view class="logo"></view>
+    <text class="counter-text">Counter: {{ counterStore.count }}</text>
+    <view class="counter">
+      <button class="btn" type="primary" @click="increment">Increment</button>
+      <button class="btn" type="primary" @click="decrement">Decrement</button>
+    </view>
   </view>
 </template>
 
 <script>
+
+import { useCounterStore } from '@/stores/counter'
+const counterStore = useCounterStore();
+
 export default {
   name: 'tab-home',
   props: {
@@ -23,16 +32,27 @@ export default {
   },
   data() {
     return {
-      title: 'Hello',
+      counterStore: counterStore,
     }
   },
+  computed: {
+    // ...mapState(['count'])
+  },
   onLoad() { },
-  methods: {},
+  methods: {
+    increment() {
+      counterStore.increment();
+    },
+    decrement() {
+      counterStore.decrement();
+    },
+  },
 }
 </script>
 
 <style>
 .content {
+  margin-top: 48rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,5 +97,23 @@ export default {
   }
 }
 
+.counter-text {
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.counter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .btn{
+    margin-left: 12rpx;
+    margin-right: 12rpx;
+  }
+}
 
 </style>
