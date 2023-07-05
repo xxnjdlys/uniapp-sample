@@ -51,9 +51,11 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-3080720230703001",
     "@dcloudio/uni-mp-weixin": "3.0.0-3080720230703001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3080720230703001",
+    "axios": "^1.4.0",
     "pinia": "2.0.36",
-    "scss": "^0.2.4",
     "pinia-plugin-unistorage": "^0.0.17",
+    "scss": "^0.2.4",
+    "uniapp-axios-adapter": "^0.3.2",
     "vue": "3.3.4",
     "vue-i18n": "9.2.2"
   },

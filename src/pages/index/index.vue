@@ -25,9 +25,9 @@
 
         <view @click="tabChange" class="action text-gray add-action" data-cur="1">
           <image v-if="currentPage===1" class="mid_btn" mode="widthFix"
-                 src="/static/tabbar/icon_tab_lucky_active1.png"></image>
+                 src="/static/tabbar/icon_tab_lucky_active.png"></image>
           <image v-if="currentPage !== 1" class="mid_btn" mode="widthFix"
-                 src="/static/tabbar/icon_tab_lucky1.png"></image>
+                 src="/static/tabbar/icon_tab_lucky.png"></image>
         </view>
 
         <view class="action" @click="tabChange" data-cur="2">
@@ -51,6 +51,8 @@
 import TabHome from "@/pages/tabs/home.vue";
 import TabMy from "@/pages/tabs/my.vue";
 import TabMiddle from "@/pages/tabs/middle.vue";
+import api from "@/api/api.js"
+import log from "@/common/log"
 
 export default {
   components: {TabMiddle, TabMy, TabHome},
@@ -60,20 +62,34 @@ export default {
     }
   },
   onLoad() {
+    this.getData();
   },
   methods: {
+    getData() {
+      api.getTest().then(resp => {
+        log.i(resp)
+      }).catch(e => {
+        log.e(e)
+      })
+    },
+    postData() {
+      api.postTest().then(resp => {
+        log.i(resp)
+      }).catch(e => {
+        log.e(e)
+      })
+    },
     tabChange: function (e) {
-      console.log("tabChange", e.currentTarget.dataset.cur)
       this.currentPage = parseInt(e.currentTarget.dataset.cur);
       switch (this.currentPage) {
         case 0:
-          console.log("tabChange", "current is tab index: 0")
+          log.d("current is tab index: 0")
           break;
         case 1:
-          console.log("tabChange", "current is tab index: 1")
+          log.d("current is tab index: 1")
           break;
         case 2:
-          console.log("tabChange", "current is tab index: 2")
+          log.d("current is tab index: 2")
           break;
       }
     },
